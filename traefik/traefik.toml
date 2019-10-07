@@ -1,7 +1,7 @@
 # print only error messages
-debug = false
+debug = true
 
-logLevel = "ERROR"
+logLevel = "INFO"
 
 # allow ingress trafic on port 80 and 443
 # redirect trafic from port 80 to 443
