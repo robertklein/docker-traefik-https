@@ -1,0 +1,21 @@
+version: "3.0"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      web:
+    ports:
+      - "9102:5094"
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:b.ht.iostw.com"
+      - "traefik.basic.port=5094"
+      - "traefik.basic.protocol=http"
+
+networks:
+  web:
+    external: true
+
