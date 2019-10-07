@@ -1,0 +1,24 @@
+version: "3.0"
+services:
+  # app1, app2 and app3 are Caddy instances listening to port 80 and serving an index.html.
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      web:
+    ports:
+      - "9101:80"
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:ht.iostw.com"
+      - "traefik.basic.port=9101"
+      - "traefik.basic.protocol=http"
+    # - "traefik.port=80"
+    # - "traefik.frontend.rule=Host:ht.iostw.com"
+    # - "traefik.docker.network=default"
+
+networks:
+  web:
+    external: true

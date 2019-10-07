@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  traefik:
+    image: traefik:1.7.7
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    networks:
+      - web
+    volumes:
+      # traefik needs the docker socket, to explore new container on your docker-host
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./acme.json:/acme.json
+    container_name: traefik
+networks:
+  web:
+    external: true
