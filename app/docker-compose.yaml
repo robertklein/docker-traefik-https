@@ -12,7 +12,7 @@ services:
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
-      - "traefik.basic.frontend.rule=Host:ht.iostw.com"
+      - "traefik.basic.frontend.rule=Host:a.ht.iostw.com"
       - "traefik.basic.port=80"
       - "traefik.basic.protocol=http"
     # - "traefik.port=80"
