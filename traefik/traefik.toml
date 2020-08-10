@@ -25,7 +25,7 @@ defaultEntryPoints = ["https","http"]
 # enable traefik to discover new container by their traefik-labels on your docker host
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "ht.iostw.com"
+domain = "ht22.iostw.com"
 watch = true
 exposedByDefault = false
 
